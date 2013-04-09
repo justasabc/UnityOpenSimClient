@@ -1,0 +1,18 @@
+############
+# Unity3D .gitignore file.
+  
+#    Store this file at the root of your local repository.
+
+Library/
+Temp/
+*.csproj
+*.pidb
+*.sln
+*.userprefs
+
+.DS_Store
+build
+  
+############
+
+
