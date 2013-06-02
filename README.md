@@ -24,7 +24,7 @@ For independent developers and studios, Unity’s democratizing ecosystem smashe
 ## Getting Started
 Getting started with *UnityOpenSimClient* are as follows:
 * **Checkout** the source: `git clone git://github.com/justasabc/UnityOpenSimClient.git`.
-* **Stat** Opensimulator server.
+* **Start** Opensimulator server.
 * **Open** UnityOpenSimClient.unity with Unity3D.
 
 
@@ -35,7 +35,7 @@ Getting started with *UnityOpenSimClient* are as follows:
 
 ## Example code
 GetClientName
-```
+``` csharp
 // We can add convenience methods to do tedious tasks and use them
         private string GetClientName(OpenSim.Framework.IClientAPI client)
         {
