@@ -2,6 +2,7 @@ UnityOpenSimClient
 ==================
 * Server: Opensimulator
 * Client: Unity3D 
+* OpenMetaverse
 * Script Language: C#
 
 
@@ -28,18 +29,19 @@ Getting started with *UnityOpenSimClient* are as follows:
 * **Open** UnityOpenSimClient.unity with Unity3D.
 
 
+## Example code
+csharp example code
+``` csharp
+// We can add convenience methods to do tedious tasks and use them
+private string GetClientName(OpenSim.Framework.IClientAPI client)
+{
+    return String.Format("{0} {1}", client.FirstName, client.LastName);
+}
+        
+```
+
+python example code
 ```python
     from pyechonest import config
     config.ECHO_NEST_API_KEY="YOUR API KEY"
-```
-
-## Example code
-GetClientName
-``` csharp
-// We can add convenience methods to do tedious tasks and use them
-        private string GetClientName(OpenSim.Framework.IClientAPI client)
-        {
-            return String.Format("{0} {1}", client.FirstName, client.LastName);
-        }
-        
 ```
