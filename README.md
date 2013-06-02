@@ -15,23 +15,17 @@ OpenSimulator is an open source multi-platform, multi-user 3D application server
 
 [Unity 3D](http://unity3d.com/)
 
-Unity 3d introduction.
+Unity is a game development ecosystem: a powerful rendering engine fully integrated with a complete set of intuitive tools and rapid workflows to create interactive 3D content; easy multiplatform publishing; thousands of quality, ready-made assets in the Asset Store and a knowledge-sharing Community.
+
+For independent developers and studios, Unity’s democratizing ecosystem smashes the time and cost barriers to creating uniquely beautiful games. They are using Unity to build a livelihood doing what they love: creating games that hook and delight players on any platform.
 
 #  Quick guide
-## Install
-There are a few different ways you can install UnityOpenSimClient:
-
-* Use cmd: `cmd UnityOpenSimClient.exe`
-* Download the zipfile from the [downloads](https://github.com/justasabc/UnityOpenSimClient/archives/master) page and install it. 
-* Checkout the source: `git clone git://github.com/justasabc/UnityOpenSimClient.git` and install it yourself.
-   
 
 ## Getting Started
-* Install UnityOpenSimClient
-* **Get an API key** - to use the Echo Nest API you need an Echo Nest API key.  
-* **Set the API** key - you can do this one of two ways:
-* set an environment variable named `ECHO_NEST_API_KEY` to your API key
-* Include this snippet of code at the beginning of your python scripts:
+Getting started with *UnityOpenSimClient* are as follows:
+* **Checkout** the source: `git clone git://github.com/justasabc/UnityOpenSimClient.git`.
+* **Stat** Opensimulator server.
+* **Open** UnityOpenSimClient.unity with Unity3D.
 
 
 ```python
@@ -39,16 +33,13 @@ There are a few different ways you can install UnityOpenSimClient:
     config.ECHO_NEST_API_KEY="YOUR API KEY"
 ```
 
-* Check out the [docs](http://echonest.github.com/pyechonest/) and examples below.
-
-## Examples
-*All examples assume you have already setup your api key!*
-
-Find artists that are similar to 'Bikini Kill':
-
-```python
-from pyechonest import artist
-bk = artist.Artist('bikini kill')
-print "Artists similar to: %s:" % (bk.name,)
-for similar_artist in bk.similar: print "\t%s" % (similar_artist.name,)
+## Example code
+GetClientName
+```
+// We can add convenience methods to do tedious tasks and use them
+        private string GetClientName(OpenSim.Framework.IClientAPI client)
+        {
+            return String.Format("{0} {1}", client.FirstName, client.LastName);
+        }
+        
 ```
