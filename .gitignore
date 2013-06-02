@@ -9,7 +9,7 @@ Temp/
 *.pidb
 *.sln
 *.userprefs
-
+obj/
 .DS_Store
 build
   

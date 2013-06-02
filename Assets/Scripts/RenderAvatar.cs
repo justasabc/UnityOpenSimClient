@@ -546,12 +546,30 @@ namespace Radegast.Rendering
 
             attachment_points.Clear();
 
-
-            string basedir = Directory.GetCurrentDirectory() + System.IO.Path.DirectorySeparatorChar + "character" + System.IO.Path.DirectorySeparatorChar;
-
-            XmlDocument lad = new XmlDocument();
-            lad.Load(basedir + LODfilename);
-
+			//on android, Directory.GetCurrentDirectory() returns "/" which means root folder of the system. no folder or file can be added into "/"
+			//I change character folder path as follow
+            string basedir = Utility.GetCharacterDir();
+			UnityEngine.Debug.Log("avatar_lad.xml is in " + basedir);
+			XmlDocument lad = new XmlDocument();
+			string path = basedir + LODfilename;
+			
+			if (!File.Exists(path))
+			{
+				UnityEngine.Debug.Log(path + " doesn't exist! So we quit");
+				UnityEngine.Application.Quit();
+			}
+				
+			if (path.Contains("://"))
+			{
+				UnityEngine.WWW www = new UnityEngine.WWW(path);
+				while(!www.isDone)
+					;
+				
+				lad.LoadXml(www.text);
+			}
+            else
+	            lad.Load(path);
+			UnityEngine.Debug.Log("Successfully loaded avatar_lad.xml");
             //Firstly read the skeleton section this contains attachment point info and the bone deform info for visual params
             // And load the skeleton file in to the bones class
 
@@ -1671,10 +1689,22 @@ namespace Radegast.Rendering
 
         public static void loadbones(string skeletonfilename)
         {
-            lock (Bone.mBones) mBones.Clear();
-            string basedir = Directory.GetCurrentDirectory() + System.IO.Path.DirectorySeparatorChar + "character" + System.IO.Path.DirectorySeparatorChar;
+            lock (Bone.mBones) mBones.Clear();			
+			string basedir = Utility.GetCharacterDir();	
+            //string basedir = Directory.GetCurrentDirectory() + System.IO.Path.DirectorySeparatorChar + "character" + System.IO.Path.DirectorySeparatorChar;
             XmlDocument skeleton = new XmlDocument();
-            skeleton.Load(basedir + skeletonfilename);
+			string path = basedir + skeletonfilename;
+			if (path.Contains("://"))
+			{
+				UnityEngine.WWW www = new UnityEngine.WWW(path);
+				while(!www.isDone)
+					;
+				
+				skeleton.LoadXml(www.text);
+			}
+			else
+            	skeleton.Load(path);
+			UnityEngine.Debug.Log ("Successfully loaded bones " + path);
             XmlNode boneslist = skeleton.GetElementsByTagName("linden_skeleton")[0];
             addbone(boneslist.ChildNodes[0], null);
         }
