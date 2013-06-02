@@ -1,24 +1,23 @@
 UnityOpenSimClient
 ==================
-Server: Opensimulator
-Client: Unity3D 
-Script Language: C#
+* Server: Opensimulator
+* Client: Unity3D 
+* Script Language: C#
 
 
 # Server
 
-Opensimulator Introduction [kzl](https://github.com/justasabc/) 
+[OpenSimulator](http://opensimulator.org/wiki/Main_Page) 
 
 OpenSimulator is an open source multi-platform, multi-user 3D application server. It can be used to create a virtual environment (or world) which can be accessed through a variety of clients, on multiple protocols. It also has an optional facility (the Hypergrid) to allow users to visit other OpenSimulator installations across the web from an account on a 'home' OpenSimulator installation.
 
 # Client
 
-Unity 3D  (http://unity3d.com/)
+[Unity 3D](http://unity3d.com/)
 
-* **artist** - search for artists by name, description, or attribute, and get back detailed information about any artist including audio, similar artists, blogs, familiarity, hotttnesss, news, reviews, urls and video.
-* **song** - search songs by artist, title, description, or attribute (tempo, duration, etc) and get detailed information back about each song, such as hotttnesss, audio_summary, or tracks.
-* **track** - upload a track to the Echo Nest and receive summary information about the track including key, duration, mode, tempo, time signature along with detailed track info including timbre, pitch, rhythm and loudness information.
+Unity 3d introduction.
 
+#  Quick guide
 ## Install
 There are a few different ways you can install UnityOpenSimClient:
 
@@ -26,6 +25,7 @@ There are a few different ways you can install UnityOpenSimClient:
 * Download the zipfile from the [downloads](https://github.com/justasabc/UnityOpenSimClient/archives/master) page and install it. 
 * Checkout the source: `git clone git://github.com/justasabc/UnityOpenSimClient.git` and install it yourself.
    
+
 ## Getting Started
 * Install UnityOpenSimClient
 * **Get an API key** - to use the Echo Nest API you need an Echo Nest API key.  
@@ -52,53 +52,3 @@ bk = artist.Artist('bikini kill')
 print "Artists similar to: %s:" % (bk.name,)
 for similar_artist in bk.similar: print "\t%s" % (similar_artist.name,)
 ```
-
-Search for artist:
-```python
-from pyechonest import artist
-weezer_results = artist.search(name='weezer')
-weezer = weezer_results[0]
-weezer_blogs = weezer.blogs
-print 'Blogs about weezer:', [blog.get('url') for blog in weezer_blogs]
-```
-
-Get an artist by name:
-```python
-from pyechonest import artist
-a = artist.Artist('lady gaga')
-print a.id
-```
-
-Get an artist by Musicbrainz ID:
-```python
-from pyechonest import artist
-a = artist.Artist('musicbrainz:artist:a74b1b7f-71a5-4011-9441-d0b5e4122711')
-print a.name
-```
-
-Get the top hottt artists:
-```python
-from pyechonest import artist
-for hottt_artist in artist.top_hottt():
-print hottt_artist.name, hottt_artist.hotttnesss
-```
-
-Search for songs:
-```python
-from pyechonest import song
-rkp_results = song.search(artist='radiohead', title='karma police')
-karma_police = rkp_results[0]
-print karma_police.artist_location
-print 'tempo:',karma_police.audio_summary['tempo'],'duration:',karma_police.audio_summary['duration']
-```
-
-Get a song's audio_url and analysis_url:
-```python
-from pyechonest import song
-ss_results = song.search(artist='the national', title='slow show', buckets=['id:7digital', 'tracks'], limit=True)
-slow_show = ss_results[0]
-ss_tracks = slow_show.get_tracks('7digital')
-print ss_tracks[0].get('preview_url')
-```
-
--![alt text](http://i.imgur.com/WWLYo.gif "Frustrated cat can't believe this is the 12th time he's clicked on an auto-linked README.md URL")
