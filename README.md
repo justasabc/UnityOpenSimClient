@@ -48,5 +48,5 @@ html = response.read()
 ```
 
 # About us
-cqarthur: https://github.com/cqarthur  
-justasabc: https://github.com/justasabc
+* cqarthur: https://github.com/cqarthur  
+* justasabc: https://github.com/justasabc
