@@ -42,6 +42,7 @@ private string GetClientName(OpenSim.Framework.IClientAPI client)
 
 python example code
 ```python
-    from pyechonest import config
-    config.ECHO_NEST_API_KEY="YOUR API KEY"
+import urllib2
+response = urllib2.urlopen('http://localhost:9000/map-1-1000-1000-objects.jpg')
+html = response.read()
 ```
