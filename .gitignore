@@ -8,6 +8,7 @@ Temp/
 *.csproj
 *.pidb
 *.sln
+*.suo
 *.userprefs
 obj/
 .DS_Store
