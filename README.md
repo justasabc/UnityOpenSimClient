@@ -5,6 +5,9 @@ UnityOpenSimClient
 * OpenMetaverse
 * Script Language: C#
 
+# Demo Video
+
+Demo video (http://v.youku.com/v_show/id_XNTY2MzAyODY4.html)
 
 # Server
 
