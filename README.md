@@ -9,6 +9,12 @@ UnityOpenSimClient
 
 Demo video (http://v.youku.com/v_show/id_XNTY2MzAyODY4.html)
 
+# ScreenShot
+on Windows
+-![alt text](http://fmn.rrimg.com/fmn060/20130604/1455/original_paSd_233c000097421190.jpg "On Windows")
+on Android
+-![alt text](http://fmn.rrimg.com/fmn062/20130604/1455/original_VOlX_3ff000008499125d.jpg "On Android")
+
 # Server
 
 [OpenSimulator](http://opensimulator.org/wiki/Main_Page) 
