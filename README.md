@@ -29,26 +29,9 @@ For independent developers and studios, Unity’s democratizing ecosystem smashe
 Getting started with *UnityOpenSimClient* are as follows:
 * **Checkout** the source: `git clone git://github.com/justasabc/UnityOpenSimClient.git`.
 * **Start** Opensimulator server.
-* **Open** UnityOpenSimClient.unity with Unity3D.
+* **Open** Assets/login.unity with Unity3D.
 
 
-## Example code
-csharp example code
-``` csharp
-// We can add convenience methods to do tedious tasks and use them
-private string GetClientName(OpenSim.Framework.IClientAPI client)
-{
-    return String.Format("{0} {1}", client.FirstName, client.LastName);
-}
-        
-```
-
-python example code
-```python
-import urllib2
-response = urllib2.urlopen('http://localhost:9000/map-1-1000-1000-objects.jpg')
-html = response.read()
-```
 
 # About us
 * cqarthur: https://github.com/cqarthur  
